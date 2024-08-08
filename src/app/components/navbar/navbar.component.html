@@ -1,0 +1,26 @@
+<section class="bg-[#2c3e50] py-6 fixed w-full top-0 z-50">
+    <div class="container">
+        <div class="flex flex-wrap justify-between items-center">
+            <a routerLink="home" class="uppercase text-3xl text-white font-bold py-2">start framework</a>
+            <div class="nav-content text-base font-bold uppercase text-white hidden lg:block">
+                <a routerLink="about" routerLinkActive="bg-[#1abc9c] rounded-md" class="m-1 p-2">about</a>
+                <a routerLink="portfolio" routerLinkActive="bg-[#1abc9c] rounded-md" class="m-1 p-2">portfolio</a>
+                <a routerLink="contact" routerLinkActive="bg-[#1abc9c] rounded-md" class="m-1 p-2">contact</a>
+            </div>
+
+            <button (click)="isNavOpen = !isNavOpen" class="lg:hidden text-[rgba(0,0,0,.15)] border border-[rgba(0,0,0,.15)] rounded-md px-4 py-2">
+                <i class="fa-solid fa-bars fa-2x"></i>
+            </button>
+        </div>
+        
+        <div [class]="!isNavOpen ? 'max-h-60': 'max-h-0'"
+        class="nav-collapse transition-all duration-200 ease-in-out lg:hidden text-white uppercase font-bold overflow-hidden">
+            <ul>
+                <li class="p-2"><a class="p-2" routerLink="about" routerLinkActive="bg-[#1abc9c] rounded-md">about</a></li>
+                <li class="p-2"><a class="p-2" routerLink="portfolio" routerLinkActive="bg-[#1abc9c] rounded-md">portfolio</a></li>
+                <li class="p-2"><a class="p-2" routerLink="contact" routerLinkActive="bg-[#1abc9c] rounded-md">contact</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</section>
